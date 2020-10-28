@@ -40,10 +40,10 @@
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Customer ID</th>
                     <th scope="col">First</th>
                     <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Email</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -61,9 +61,9 @@
                 </tr>
                 <tr>
                     <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
+                    <td>Strong</td>
+                    <td>Bad</td>
+                    <td>@The Guy</td>
                 </tr>
                 <tr>
                     <th scope="row">4</th>
@@ -153,7 +153,25 @@
             </table>           
         </div>
         <div id="bottom-ctrl">
-
+            <div id="bottom-count">
+                <div id="count-card" class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Active Customer Count!</h5>                      
+                      <p id="card-num">25</p>
+                    </div>
+                  </div>
+            </div>
+            <div id="bottom-search">
+                <form id="bottom-srch-frm">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text text-muted">Search for a customer by name. </small>
+                    </div>                  
+                    <button id="btn-search-cust" type="button" class="btn btn-primary">Search Customer</button>
+                    <button id="btn-add-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add New Customer</button>
+                  </form>
+            </div>
         </div>
     </div>
 
@@ -161,7 +179,7 @@
     <div class="invisible" id="ltbox-bckdrp">        
         <div id="ltbox-form-wrap">
             <div id="ltbox-ctrl">
-                <div id="ltbox-crt-x"><a href="#"><i class="fas fa-times fa-lg"></i></a></div>
+                <div id="ltbox-crt-x"><a href="#"><i id="cust-close" class="fas fa-times fa-lg"></i></a></div>
             </div>
             <form id="ltbox-form">
                 <div class="form-row">
@@ -219,5 +237,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
+    <!--LIGHTBOX JS-->
+    <script src="js/lightbox.js"></script>
 </body>
 </html>
