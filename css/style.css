@@ -94,6 +94,11 @@ a, a:hover{
     -moz-box-shadow: 6px 7px 11px -5px rgba(131,126,126,1);
 }
 
+#big-table tr:hover{
+    background-color: #EBEEF3;
+}
+
+
 /*          SIDE DASHBOARD               */
 /*====================================== */
 #bottom-ctrl{
@@ -140,12 +145,12 @@ a, a:hover{
     justify-content: space-around;
 }
 
-#btn-add-cust, #btn-search-cust {
+#btn-add-cust, #btn-search-cust, #btn-del-cust {
     background-color: #447AB9;
     border-color: #447AB9;
 }
 
-#btn-add-cust:hover, #btn-search-cust:hover{
+#btn-add-cust:hover, #btn-search-cust:hover, #btn-del-cust:hover{
     background-color: #325886;
     border-color: #325886;
 }

@@ -37,7 +37,7 @@
     <!--MAIN CONTENT-->
     <div id="content-box">
         <div id="table-wrapper">
-            <table class="table">
+            <table id="big-table" class="table">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">Customer ID</th>
@@ -164,12 +164,14 @@
             <div id="bottom-search">
                 <form id="bottom-srch-frm">
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
+                      <label for="exampleInputEmail1">Search</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                       <small id="emailHelp" class="form-text text-muted">Search for a customer by name. </small>
                     </div>                  
                     <button id="btn-search-cust" type="button" class="btn btn-primary">Search Customer</button>
                     <button id="btn-add-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add New Customer</button>
+                    <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Delete Customer</button>
+                    <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Order History</button>
                   </form>
             </div>
         </div>
