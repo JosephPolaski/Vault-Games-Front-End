@@ -174,7 +174,19 @@ a, a:hover{
     display: flex;
     flex-direction: column;
     width: 60%;
-    height: 70%;
+    height: 75%;
+    z-index: 99999 !important;
+    background-color: #ffffff;
+    align-self: center;
+    justify-content: center;
+}
+
+#ltbox-form-wrap-prod {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 50%;
     z-index: 99999 !important;
     background-color: #ffffff;
     align-self: center;
@@ -188,7 +200,7 @@ a, a:hover{
     justify-content: flex-start;
     width: 100%;
     height: 5%;
-    margin-bottom: 5%;    
+    margin-bottom: 5%;
 }
 
 #ltbox-crt-x{
@@ -199,7 +211,6 @@ a, a:hover{
 
 #ltbox-ctrl a{
     color: black;
-    
 }
 
 #ltbox-form{
