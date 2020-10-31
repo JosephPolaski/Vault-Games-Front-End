@@ -95,7 +95,14 @@ a, a:hover{
     -moz-box-shadow: 6px 7px 11px -5px rgba(131,126,126,1);
 }
 
-#big-table tr:hover{
+#big-table tbody tr:hover{
+    background-color: #EBEEF3;
+    cursor: pointer;
+}
+
+.tr-selected{
+    border-top: 2px solid  #447AB9;
+    border-bottom: 2px solid  #447AB9;
     background-color: #EBEEF3;
 }
 
@@ -169,6 +176,18 @@ a, a:hover{
     z-index: 9999 !important;
 }
 
+.ltbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 75%;
+    z-index: 99999 !important;
+    background-color: #ffffff;
+    align-self: center;
+    justify-content: center;
+}
+
 #ltbox-form-wrap {
     position: relative;
     display: flex;
@@ -219,3 +238,34 @@ a, a:hover{
     width: 90%;
     height: 80%;
 }
+
+/*              alert                    */
+/*====================================== */
+#select-alert {
+    position: absolute;
+    width: 100%;
+    height: 6%;
+    z-index: 9999999 !important;
+    border-radius: 0 !important;
+    text-align: center;
+    opacity:0;
+}
+
+/*           Reference  Cited 
+
+The code below used the following reference code to achieve the fade in and out effect.
+
+Original Author: Unknown
+Original Source: https://stackoverflow.com/questions/30125705/css-how-to-make-an-element-fade-in-and-then-fade-out
+*/
+.fade-inOut {
+    opacity: 1;
+    animation: fade 2s linear;
+}
+
+@keyframes fade {
+    0%, 100% {opacity: 0;}
+    50% {opacity: 1;}
+}
+/*          END REFERENCE          */
+
