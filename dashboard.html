@@ -7,14 +7,28 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- custom css-->
-    <link rel="stylesheet" href="./css/style.css">
-
-    <!-- Font Awesome Font Kit-->
+    <!-- Font Awesome Font Kit -->
     <script src="https://kit.fontawesome.com/a71bc7919e.js" crossorigin="anonymous"></script>
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">    
+
+    <!-- CDN dependencies for bootstrap graph-->
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+
+    <!-- custom css-->
+    <link rel="stylesheet" href="./css/style.css">
 
     <title>The Vault</title>
 </head>
@@ -30,207 +44,40 @@
             <li class="dash-btn" id="dash-btn-2"><a href="customers.html">Customers</a></li>
             <li class="dash-btn" id="dash-btn-3"><a href="orders.html">Orders</a></li>
             <li class="dash-btn" id="dash-btn-4"><a href="products.html">Products</a></li>
-            <li class="dash-btn" id="dash-btn-5"><a href="#">Shipping</a></li>
+            <li class="dash-btn" id="dash-btn-5"><a href="customerAddresses.html">Customer Addresses</a></li>
         </ul>
     </div>
 
     <!--MAIN CONTENT-->
     <div id="content-box">
-        <div id="table-wrapper">
-            <table id="big-table" class="table">
-                <thead class="thead-dark">
-                <tr>
-                    <th scope="col">Customer ID</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>mdo@gmail.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>mdo@gmail.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Strong</td>
-                    <td>Bad</td>
-                    <td>theGuy@homestarrunner.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>tweeter@twitter.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Michael</td>
-                    <td>Jordan</td>
-                    <td>theJord@laForge.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Harry</td>
-                    <td>the Hendersons</td>
-                    <td>Bigfoot@bigandtall.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">7</th>
-                    <td>Wilson</td>
-                    <td>Fisk</td>
-                    <td>Kingpen@myTown.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">8</th>
-                    <td>Walter</td>
-                    <td>White</td>
-                    <td>Heisenberg@saymyname.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">9</th>
-                    <td>Jessie</td>
-                    <td>Pinkman</td>
-                    <td>yeah@science.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">10</th>
-                    <td>Gustavo</td>
-                    <td>Fring</td>
-                    <td>halfBaked@polloshermanos.com</td>
-                </tr>
-                <tr>
-                    <th scope="row">11</th>
-                    <td>Gandalf</td>
-                    <td>the white</td>
-                    <td>iComeBack@theTurnOfTheTide.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">12</th>
-                    <td>Condor</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-                <tr>
-                    <th scope="row">13</th>
-                    <td>Norman</td>
-                    <td>Bates</td>
-                    <td>iLoveMother@batesMotel.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">14</th>
-                    <td>Jacobim</td>
-                    <td>Mugatu</td>
-                    <td>jmugatu@derelicte.net</td>
-                </tr>
-                <tr>
-                    <th scope="row">15</th>
-                    <td>Ron</td>
-                    <td>Swanson</td>
-                    <td>ron@pawneepandr.gov</td>
-                </tr>
-                <tr>
-                    <th scope="row">16</th>
-                    <td>Happy</td>
-                    <td>Gilmore</td>
-                    <td>hgilmore@igolf.net</td>
-                </tr>
-                <tr>
-                  <th scope="row">17</th>
-                  <td>John</td>
-                  <td>Candy</td>
-                  <td>@CandyHams</td>
-              </tr>
-                </tbody>
-            </table>           
-        </div>
-        <div id="bottom-ctrl">
-            <div id="bottom-count">
-                <div id="count-card" class="card">
-                    <div class="card-body">
-                      <h5 class="card-title">Active Customer Count!</h5>                      
-                      <p id="card-num">17</p>
-                    </div>
-                  </div>
+      <div id = "top-graph">
+        <canvas id="myChart"></canvas>
+      </div>
+        <div id="dashboard-wrapper">
+          <div id="dash-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title">Active Customer Count!</h5>
+              <p id="card-num">17</p>
             </div>
-            <div id="bottom-search">
-                <form id="bottom-srch-frm">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Search</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <small id="emailHelp" class="form-text text-muted">Search for a customer by name. </small>
-                    </div>                  
-                    <button id="btn-search-cust" type="button" class="btn btn-primary">Search Customer</button>
-                    <button id="btn-add-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add New Customer</button>
-                    <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Delete Customer</button>
-                    <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Order History</button>
-                  </form>
+          </div>
+          <div id="dash-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title">Products in Inventory!</h5>
+              <p id="card-num">85</p>
             </div>
-        </div>
-    </div>
-
-    <!--LIGHTBOX-->
-    <div class="invisible" id="ltbox-bckdrp">        
-        <div id="ltbox-form-wrap">
-            <div id="ltbox-ctrl">
-                <div id="ltbox-crt-x"><a href="#"><i id="cust-close" class="fas fa-times fa-lg"></i></a></div>
-            </div>
-            <form id="ltbox-form">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                      <label for="inputEmail4">First Name</label>
-                      <input type="text" class="form-control" id="inputEmail4" placeholder="First Name">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label for="inputPassword4">Last Name</label>
-                      <input type="text" class="form-control" id="inputPassword4" placeholder="Last Name">
-                    </div>
-                  </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                  </div>
-                  <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                </div>
-                <div class="form-group">
-                  <label for="inputAddress2">Address 2</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="form-row">
-                  <div class="form-group col-md-6">
-                    <label for="inputCity">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                  </div>
-                  <div class="form-group col-md-4">
-                    <label for="inputState">State</label>
-                    <select id="inputState" class="form-control">
-                      <option selected>Choose...</option>
-                      <option>...</option>
-                    </select>
-                  </div>
-                  <div class="form-group col-md-2">
-                    <label for="inputZip">Zip</label>
-                    <input type="text" class="form-control" id="inputZip">
-                  </div>
-                </div>                
-                <button type="submit" class="btn btn-primary">Add Customer</button>
-              </form>
+          </div>     
+          <div id="dash-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title">Orders Processed</h5>
+              <p id="card-num">45</p>
+            </div>     
+          </div>
+          <div id="dash-card" class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Sales</h5>
+              <p id="card-num">$2536</p>
+            </div>      
+          </div>        
         </div>
     </div>
     
@@ -238,8 +85,25 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+
+    <!-- CDN dependencies for bootstrap graph-->
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+        
     <!--LIGHTBOX JS-->
     <script src="js/lightbox.js"></script>
+
+    <!--LIGHTBOX JS-->
+    <script src="js/dashboardGraph.js"></script>
+
 </body>
 </html>
