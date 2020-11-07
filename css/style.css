@@ -210,12 +210,12 @@ a, a:hover{
     justify-content: space-around;
 }
 
-#btn-add-cust, #btn-search-cust, #btn-del-cust, #btn-update-cust {
+#btn-add-cust, #btn-search-cust, #btn-del-cust, #btn-update-cust, #btn-return-order {
     background-color: #447AB9;
     border-color: #447AB9;
 }
 
-#btn-add-cust:hover, #btn-search-cust:hover, #btn-del-cust:hover{
+#btn-add-cust:hover, #btn-search-cust:hover, #btn-del-cust:hover, #btn-update-cust:hover, #btn-return-order:hover {
     background-color: #325886;
     border-color: #325886;
 }
