@@ -69,6 +69,14 @@ a, a:hover{
     font-size: 1.1rem;
 }
 
+.static {
+    color: #447AB9;
+    font-size: 1.1rem;
+
+    /* text shadow */
+    text-shadow: 1px 1px 20px rgba(130,166,214,0.5);
+}
+
 
 /*            MAIN CONTENT               */
 /*====================================== */
