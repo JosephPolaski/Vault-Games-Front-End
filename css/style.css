@@ -210,7 +210,7 @@ a, a:hover{
     justify-content: space-around;
 }
 
-#btn-add-cust, #btn-search-cust, #btn-del-cust {
+#btn-add-cust, #btn-search-cust, #btn-del-cust, #btn-update-cust {
     background-color: #447AB9;
     border-color: #447AB9;
 }
