@@ -28,7 +28,7 @@
         <ul id="dash-nav">
             <li class="dash-btn" id="dash-btn-1"><a href="dashboard.html">Dashboard</a></li>
             <li class="dash-btn" id="dash-btn-2"><a href="customers.html">Customers</a></li>
-            <li class="dash-btn" id="dash-btn-3"><a href="orders.html">Orders</a></li>
+            <li class="dash-btn" id="dash-btn-3"><a class="static" href="#">Orders</a></li>
             <li class="dash-btn" id="dash-btn-4"><a href="products.html">Products</a></li>
             <li class="dash-btn" id="dash-btn-5"><a href="customerAddresses.html">Customer Addresses</a></li>
         </ul>
@@ -48,119 +48,119 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
+                  <tr id="tr-1">
                     <th scope="row">1</th>
                     <td>Josh Groban</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-2">
                     <th scope="row">2</th>
                     <td>Taser Face</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-3">
                     <th scope="row">3</th>
                     <td>Captain Falcon</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-4">
                     <th scope="row">4</th>
                     <td>Jenovah</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-5">
                     <th scope="row">5</th>
                     <td>Fallout Dude</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-6">
                     <th scope="row">6</th>
                     <td>Mario Mario</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-7">
                     <th scope="row">7</th>
                     <td>Ninja Gaiden</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-8">
                     <th scope="row">8</th>
                     <td>Wowster</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-9">
                     <th scope="row">9</th>
                     <td>Meowth</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-10">
                     <th scope="row">10</th>
                     <td>Gruncle Stan</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-11">
                     <th scope="row">11</th>
                     <td>Mabel Pines</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-12">
                     <th scope="row">12</th>
                     <td>Dipper Pines</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-13">
                     <th scope="row">13</th>
                     <td>Bill Cipher</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-14">
                     <th scope="row">14</th>
                     <td>Soos</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-15">
                     <th scope="row">15</th>
                     <td>Gnomeo</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-16">
                     <th scope="row">16</th>
                     <td>Kirk Hammett</td>
                     <td>Purchased</td>
                     <td>2/20/2010</td>
                     <td>103.99</td>
                 </tr>
-                <tr>
+                <tr id="tr-17">
                     <th scope="row">17</th>
                     <td>Geradlo</td>
                     <td>Purchased</td>
@@ -184,11 +184,9 @@
                     <div class="form-group">
                       <label for="exampleInputEmail1">Search</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                      <small id="emailHelp" class="form-text text-muted">Search for a customer by name. </small>
+                      <small id="emailHelp" class="form-text text-muted">Search for order by customer name. </small>
                     </div>                  
-                    <button id="btn-search-cust" type="button" class="btn btn-primary">Search Customer</button>
-                    <button id="btn-add-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add New Customer</button>
-                    <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Delete Customer</button>
+                    <button id="btn-search-cust" type="button" class="btn btn-primary">Search Order</button>
                     <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Order History</button>
                     <button id="btn-return-order" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Return Order</button>
                   </form>
@@ -252,6 +250,11 @@
               </form>
         </div>
     </div>
+
+    <!--ALERT-->
+    <div id="select-alert" class="alert alert-danger" role="alert">
+      You may only select one item at a time!
+    </div>
     
     <!--Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -260,5 +263,8 @@
     
     <!--LIGHTBOX JS-->
     <script src="js/lightbox.js"></script>
+
+    <!--USER INTERFACE INTERACTION JS-->
+    <script src="js/ui_interact.js"></script>
 </body>
 </html>
