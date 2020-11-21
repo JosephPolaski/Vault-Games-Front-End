@@ -73,8 +73,23 @@ $(document).ready(()=>{
 
         // CUSTOMER ADDRESSES PAGE
         if(custAddress !== -1){
-            //GET Customer Data From Server
+            //GET Address Data From Server
             getDataFromServer(`${servURL}/allAddresses`, buildTable);
+            setHeader(['Customer ID', 'First', 'last', 'Street Address', 'City', 'State', 'Zip']); 
+        }
+
+        // ORDERS PAGE
+        if(orders !== -1){
+            //GET Order Data From Server
+            getDataFromServer(`${servURL}/allOrders`, buildTable);
+            setHeader(['Order id', 'Customer', 'Order Status', 'Date Ordered', 'Total Price']); 
+        }
+
+        // PRODUCTS PAGE
+        if(products !== -1){
+            //GET Product Data From Server
+            getDataFromServer(`${servURL}/allProducts`, buildTable);
+            setHeader(['Product id', 'Title', 'Publisher', 'Platform', 'Genre', 'Rating', 'quantity', 'price']); 
         }
     }
 
