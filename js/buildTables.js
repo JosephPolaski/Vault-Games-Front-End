@@ -1,6 +1,6 @@
 import {getDataFromServer} from './client.js'  
 
-const servURL = 'http://flip3.engr.oregonstate.edu:8296';
+const servURL = 'http://flip2.engr.oregonstate.edu:8296';
 
 //Get Current Page URL
 var currentPage = location.href;

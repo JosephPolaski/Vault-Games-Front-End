@@ -6,8 +6,8 @@ $(document).ready(function(){
     var ROWSELECTED = null;
 
     //SELECT ROW EVENT
-    $('#table-bod tr').on('click',function(e){     
-        console.log('I hate buttons');   
+    $(document).on('click','#table-bod tr', function(e){
+        console.log('HELLO!')
 
         if($(this).hasClass('tr-selected')){
             $(this).removeClass('tr-selected'); // add selected class
@@ -23,8 +23,7 @@ $(document).ready(function(){
             }               
                      
         }     
-
-    });
+    });      
 
     /***************************************
      ********CREATE FUNCTIONS***************
