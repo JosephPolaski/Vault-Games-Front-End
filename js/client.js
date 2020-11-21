@@ -1,7 +1,6 @@
  //GET REQUEST FUNCTION
 const getDataFromServer = (queryURL, callBack)=>{
 
-    var result;
     //GET Customer Data From Server
     $.ajax({
         type: 'GET',
@@ -9,7 +8,7 @@ const getDataFromServer = (queryURL, callBack)=>{
         datatype: 'json',
         success: callBack,
         error: function() {
-    
+            alert('Oh No! It seems there was an error in contacting the server!')
         }
     });
 
