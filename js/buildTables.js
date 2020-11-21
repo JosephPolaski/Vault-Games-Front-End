@@ -36,15 +36,12 @@ let rowNum = 1; // tracks row number for labeling
 
 $('#big-table').append('<tbody id="table-bod"></tbody>') // add table body
 
-console.log(data)
-
 // BUILD ROWS AND CELLS
 for(let key in data['results']){
     
     $('#table-bod').append('<tr id="tr-' + rowNum + '"></tr>'); // add row for each key in response data
 
     let currentRow = Object.values(data['results'][key]); // capture current row values array
-    console.log(currentRow);
 
     // insert cells for row
     for(let i = 0; i < currentRow.length; i++){
@@ -92,4 +89,4 @@ const updateTableData = ()=>{
 }
 
 
-export {updateTableData};
+export {updateTableData, servURL};

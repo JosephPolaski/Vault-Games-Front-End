@@ -14,5 +14,28 @@ const getDataFromServer = (queryURL, callBack)=>{
 
 }
 
+//POST REQUEST FUNCTION
 
-export {getDataFromServer};
+const postDataToServer = (queryURL, postData) =>{
+
+    //POST Customer Data From Server
+    $.ajax({
+        type: 'POST',
+        url: queryURL,
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: postData,
+        datatype: 'jsonp',
+        success: function(data){
+            console.log(data)
+        },
+        error: function() {
+            alert('Oh No! It seems there was an error in contacting the server!')
+        }
+    });
+
+}
+
+
+export {getDataFromServer, postDataToServer};
