@@ -1,6 +1,6 @@
-import {getDataFromServer} from './client.js'  
-
-const servURL = 'http://flip3.engr.oregonstate.edu:8296';
+import {getDataFromServer} from './client.js'
+import {servURL} from './config.js'
+import {fullCount} from './aggregateCount.js';
 
 //Get Current Page URL
 var currentPage = location.href;
@@ -60,10 +60,13 @@ for(let key in data['results']){
 }
 
 const updateTableData = ()=>{
+    // Add card data
+    getDataFromServer(`${servURL}/fullCount`,fullCount)
+
     // CUSTOMER PAGE
     if(customers !== -1){
         getDataFromServer(`${servURL}/allCustomers`,buildTable); // make async call  
-        setHeader(['Customer ID', 'First', 'last', 'Email']);       
+        setHeader(['Customer ID', 'First', 'last', 'Email']); 
     }
 
     // CUSTOMER ADDRESSES PAGE

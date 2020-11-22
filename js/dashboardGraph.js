@@ -4,10 +4,10 @@ var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
 type: 'bar',
 data: {
-labels: ["Customers", "Inventory", "Orders Processed", "Total Sales"],
+labels: ["Customers", "Inventory", "Orders Processed"],
 datasets: [{
 label: 'Click to hide chart',
-data: [17, 85, 17, 2.58],
+data: [17, 85, 17],
 backgroundColor: [
 'rgba(255, 99, 132, 0.2)',
 'rgba(54, 162, 235, 0.2)',

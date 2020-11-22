@@ -9,16 +9,11 @@
 
     <!-- Font Awesome Font Kit -->
     <script src="https://kit.fontawesome.com/a71bc7919e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">   
 
     <!--Google Fonts-->
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">    
-
-    <!-- CDN dependencies for bootstrap graph-->
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">    
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
@@ -56,28 +51,23 @@
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Active Customer Count!</h5>
-              <p id="card-num">17</p>
+              <p id="cust-num">17</p>
             </div>
           </div>
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Products in Inventory!</h5>
-              <p id="card-num">85</p>
+              <p id="prod-num">85</p>
             </div>
           </div>     
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Orders Processed</h5>
-              <p id="card-num">45</p>
+              <p id="ord-num">45</p>
             </div>     
           </div>
-          <div id="dash-card" class="card">
-            <div class="card-body">
-              <h5 class="card-title">Total Sales</h5>
-              <p id="card-num">$2536</p>
-            </div>      
-          </div>        
-        </div>
+        </div>        
+      </div>
     </div>
     
     <!--Bootstrap JS-->
@@ -97,12 +87,24 @@
 
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-        
-    <!--LIGHTBOX JS-->
-    <script src="js/lightbox.js"></script>
 
     <!--GRAPH JS-->
     <script src="js/dashboardGraph.js"></script>
+
+    <!--USER INTERFACE INTERACTION JS-->
+    <script type="module" src="js/ui_interact.js"></script>  
+
+    <!--BUILD TABLES JS-->
+    <script type="module" src="js/buildTables.js"></script>
+
+    <!--CLIENT JS-->
+    <script type="module" src="js/client.js"></script>
+
+    <!--CONFIIG JS-->
+    <script type="module" src="js/config.js"></script>
+
+    <!-- Count Boxes -->
+    <script type='module' src="js/aggregateCount.js"></script>
 
 </body>
 </html>
