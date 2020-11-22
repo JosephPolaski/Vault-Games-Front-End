@@ -1,4 +1,4 @@
-import {updateTableData, servURL} from './buildTables.js'
+import {updateTableData, servURL, updateOrderHistory} from './buildTables.js'
 import {getDataFromServer, postDataToServer} from './client.js' 
 
 $(document).ready(function(){    
@@ -72,6 +72,58 @@ $(document).ready(function(){
        
         // make async post call
         postDataToServer(`${servURL}/insertProduct`, postObject); // post new customer
+
+        // delete table
+        $('#big-table').remove(); // delete out of date table
+
+        // refresh table
+        updateTableData();
+
+    });
+
+    //GET ORDER HISTORY
+    $('#btn-order-hist').on('click',function(e){
+    
+        let customerName = $('#orderInputSearch').val();
+        let splitNames = customerName.split(' ');
+
+        // build post request object
+        let postObject = {};
+
+        // set key value pairs
+        postObject.fname = splitNames[0];
+        postObject.lname = splitNames[1];        
+        
+        // delete table
+        $('#big-table').remove(); // delete out of date table
+
+        if(customerName == ""){
+            updateTableData() // Render All orders
+        } else {
+            updateOrderHistory(postObject.fname, postObject.lname); // Render Customer Order History
+        }
+        
+
+    });
+
+    //ADD CUSTOMER ADDRESS EVENT HANDLER
+    $('#btn-add-cAddr').on('click',function(e){
+
+        // build post request object
+        let postObject = {};
+
+        // set key value pairs
+        postObject.fname = $('#customer-fname').val();
+        postObject.lname = $('#customer-lname').val();
+        postObject.email = $('#customer-email').val();
+        postObject.addr1 = $('#customer-addr1').val();
+        postObject.addr2 = $('#customer-addr2').val();
+        postObject.city = $('#customer-city').val();
+        postObject.state = $('#customer-state').val();
+        postObject.zip = $('#customer-zip').val();        
+
+        // make async post call
+        postDataToServer(`${servURL}/insertCustomer`, postObject); // post new customer
 
         // delete table
         $('#big-table').remove(); // delete out of date table

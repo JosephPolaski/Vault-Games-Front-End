@@ -15,7 +15,6 @@ const getDataFromServer = (queryURL, callBack)=>{
 }
 
 //POST REQUEST FUNCTION
-
 const postDataToServer = (queryURL, postData) =>{
 
     //POST Customer Data From Server
@@ -31,7 +30,7 @@ const postDataToServer = (queryURL, postData) =>{
             console.log(data)
         },
         error: function() {
-            alert('Oh No! It seems there was an error in contacting the server!')
+            alert('ERROR: Duplicate value or potential conflict reaching server.')
         }
     });
 

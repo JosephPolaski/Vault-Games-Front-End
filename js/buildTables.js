@@ -1,6 +1,6 @@
 import {getDataFromServer} from './client.js'  
 
-const servURL = 'http://flip2.engr.oregonstate.edu:8296';
+const servURL = 'http://flip3.engr.oregonstate.edu:8296';
 
 //Get Current Page URL
 var currentPage = location.href;
@@ -13,20 +13,20 @@ var products = currentPage.search("products");
 
 // SETUP HEADER
 function setHeader(columns){
-// add table to wrapper
-$('#table-wrapper').append('<table id="big-table" class="table"></table>');
+    // add table to wrapper
+    $('#table-wrapper').append('<table id="big-table" class="table"></table>');
 
-// add thead and row
-$('#big-table').append('<thead class="thead-dark"></thead>')
+    // add thead and row
+    $('#big-table').append('<thead class="thead-dark"></thead>')
 
-// add header row
-$('.thead-dark').append('<tr id="headrow"></tr>')
+    // add header row
+    $('.thead-dark').append('<tr id="headrow"></tr>')
 
-// Add Headings
-for(let i = 0; i < columns.length; i++){
-    let cellString = '<th scope="col">' + columns[i] + '</th>';
-    $('#headrow').append(cellString);
-}
+    // Add Headings
+    for(let i = 0; i < columns.length; i++){
+        let cellString = '<th scope="col">' + columns[i] + '</th>';
+        $('#headrow').append(cellString);
+    }
 }
 
 // BUILD TABLE
@@ -70,7 +70,7 @@ const updateTableData = ()=>{
     if(custAddress !== -1){
         //GET Address Data From Server
         getDataFromServer(`${servURL}/allAddresses`, buildTable); // make async call
-        setHeader(['Customer ID', 'First', 'last', 'Street Address', 'City', 'State', 'Zip']); 
+        setHeader(['Address ID', 'First', 'last', 'Street Address', 'City', 'State', 'Zip']); 
     }
 
     // ORDERS PAGE
@@ -88,5 +88,11 @@ const updateTableData = ()=>{
     }
 }
 
+const updateOrderHistory = (fname, lname) => {
+    //GET Order Data From Server
+    console.log("Sending URL: " + `${servURL}/orderHistory?fname=`+ fname + `&lname=` + lname );
+    getDataFromServer(`${servURL}/orderHistory?fname=`+ fname + `&lname=` + lname,buildTable); // make async call
+    setHeader(['Order id', 'Customer', 'Order Status', 'Date Ordered', 'Total Price']); 
+}
 
-export {updateTableData, servURL};
+export {updateTableData, servURL, updateOrderHistory};
