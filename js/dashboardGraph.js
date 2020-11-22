@@ -1,5 +1,12 @@
 /*      BOOTSTRAP GRAPH     */
 /*-------------------------*/
+var custCount = parseInt($('#cust-num-main')[0].text)
+var prodCount = $('#prod-num-main').val()
+var ordCount = $('#ord-num').val()
+
+console.log(custCount);
+console.log($('#cust-num-main')[0]);
+
 var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
 type: 'bar',
@@ -7,7 +14,7 @@ data: {
 labels: ["Customers", "Inventory", "Orders Processed"],
 datasets: [{
 label: 'Click to hide chart',
-data: [17, 85, 17],
+data: [12, 14, 16],
 backgroundColor: [
 'rgba(255, 99, 132, 0.2)',
 'rgba(54, 162, 235, 0.2)',

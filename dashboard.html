@@ -51,19 +51,19 @@
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Active Customer Count!</h5>
-              <p id="cust-num">17</p>
+              <p id="cust-num-main"></p>
             </div>
           </div>
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Products in Inventory!</h5>
-              <p id="prod-num">85</p>
+              <p id="prod-num-main"></p>
             </div>
           </div>     
           <div id="dash-card" class="card">
             <div class="card-body">
               <h5 class="card-title">Orders Processed</h5>
-              <p id="ord-num">45</p>
+              <p id="ord-num-main"></p>
             </div>     
           </div>
         </div>        
@@ -88,9 +88,6 @@
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
-    <!--GRAPH JS-->
-    <script src="js/dashboardGraph.js"></script>
-
     <!--USER INTERFACE INTERACTION JS-->
     <script type="module" src="js/ui_interact.js"></script>  
 
@@ -105,6 +102,10 @@
 
     <!-- Count Boxes -->
     <script type='module' src="js/aggregateCount.js"></script>
+
+    
+    <!--GRAPH JS-->
+    <script type="module" src="js/dashboardGraph.js"></script>
 
 </body>
 </html>
