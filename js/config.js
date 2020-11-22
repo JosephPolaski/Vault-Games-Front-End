@@ -1,7 +1,7 @@
 // Sets up all global page dependancies
-import {updateTableData} from './buildTables.js'
-import {getDataFromServer} from './client.js' 
-import {fullCount} from './aggregateCount.js'
+import {updateTableData} from './buildTables.js';
+import {getDataFromServer} from './client.js';
+import {fullCount} from './aggregateCount.js';
 const servURL = 'http://flip2.engr.oregonstate.edu:8226';
 
 $(document).ready(function(){
@@ -11,4 +11,4 @@ $(document).ready(function(){
 
 });
 
-export {servURL}
+export {servURL};
