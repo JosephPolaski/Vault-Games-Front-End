@@ -37,12 +37,7 @@ $(document).ready(function(){
         // set key value pairs
         postObject.fname = $('#customer-fname').val();
         postObject.lname = $('#customer-lname').val();
-        postObject.email = $('#customer-email').val();
-        postObject.addr1 = $('#customer-addr1').val();
-        postObject.addr2 = $('#customer-addr2').val();
-        postObject.city = $('#customer-city').val();
-        postObject.state = $('#customer-state').val();
-        postObject.zip = $('#customer-zip').val();        
+        postObject.email = $('#customer-email').val();         
 
         // make async post call
         postDataToServer(`${servURL}/insertCustomer`, postObject); // post new customer
@@ -107,29 +102,27 @@ $(document).ready(function(){
     });
 
     //ADD CUSTOMER ADDRESS EVENT HANDLER
-    $('#btn-add-cAddr').on('click',function(e){
+    $('#btn-add-cAddr-form').on('click',function(e){
 
         // build post request object
         let postObject = {};
 
         // set key value pairs
-        postObject.fname = $('#customer-fname').val();
-        postObject.lname = $('#customer-lname').val();
-        postObject.email = $('#customer-email').val();
+        postObject.cid = parseInt($('.tr-selected th')[0].innerText);
         postObject.addr1 = $('#customer-addr1').val();
         postObject.addr2 = $('#customer-addr2').val();
         postObject.city = $('#customer-city').val();
         postObject.state = $('#customer-state').val();
-        postObject.zip = $('#customer-zip').val();        
+        postObject.zip = $('#customer-zip').val();
 
         // make async post call
-        postDataToServer(`${servURL}/insertCustomer`, postObject); // post new customer
+        postDataToServer(`${servURL}/insertCustAddress`, postObject); // post new customer
 
         // delete table
-        $('#big-table').remove(); // delete out of date table
+        //$('#big-table').remove(); // delete out of date table
 
         // refresh table
-        updateTableData();
+        //updateTableData();
 
     });
 

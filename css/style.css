@@ -230,7 +230,7 @@ a, a:hover{
 
 /*              LIGHTBOX                  */
 /*====================================== */
-#ltbox-bckdrp{
+.ltbox-bckdrp{
     position: absolute;
     display: flex;
     justify-content: center;    
@@ -264,6 +264,30 @@ a, a:hover{
     justify-content: center;
 }
 
+#ltbox-form-wrap-cust2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 50%;
+    z-index: 99999 !important;
+    background-color: #ffffff;
+    align-self: center;
+    justify-content: center;
+}
+
+#ltbox-form-wrap-cust1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 40%;
+    z-index: 99999 !important;
+    background-color: #ffffff;
+    align-self: center;
+    justify-content: center;
+}
+
 #ltbox-ctrl{
     position: relative;
     display: flex;
@@ -290,6 +314,7 @@ a, a:hover{
     width: 90%;
     height: 80%;
 }
+
 
 /*              alert                    */
 /*====================================== */
