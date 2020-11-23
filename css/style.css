@@ -288,6 +288,20 @@ a, a:hover{
     justify-content: center;
 }
 
+#ltbox-form-wrap-cust-ord{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: auto;
+    max-height: 90%;
+    overflow-y: scroll;
+    z-index: 99999 !important;
+    background-color: #ffffff;
+    align-self: center;
+    justify-content: center;
+}
+
 #ltbox-ctrl{
     position: relative;
     display: flex;
@@ -315,6 +329,42 @@ a, a:hover{
     height: 80%;
 }
 
+#ltbox-form-ord{
+    position: relative;
+    align-self: center;
+    justify-content: center;
+    width: 90%;
+    height: 40%;
+    max-height: 40%;
+}
+
+#form-ord-row{
+    position: relative;
+    display: flex;
+    flex-grow: unset;
+    justify-content: center;
+    max-height: 100%;
+}
+
+.cust-ord-ctrl{
+    margin-top: 2%;
+    margin-bottom: 0% !important;
+}
+
+#cust-ord-table{
+    display: flex;
+    position: relative;
+    width: 95%;
+    height: 60%;
+    min-height: 60%;
+    align-self:center;
+    overflow-y: scroll;
+    margin-bottom: 2%;
+}
+
+#cust-ord-btn-wrap{
+    margin-bottom: 2%;
+}
 
 /*              alert                    */
 /*====================================== */
