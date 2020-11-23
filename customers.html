@@ -53,13 +53,13 @@
                   <div class="form-group">
                     <label for="exampleInputEmail1">Search</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <small id="emailHelp" class="form-text text-muted">Search for a customer by name. </small>
+                    <small id="emailHelp" class="form-text text-muted">Search for a customer by name. Remeber to select a customer before adding an address or order!</small>
                   </div>                  
                   <button id="btn-search-cust" type="button" class="btn btn-primary">Search Customer</button>
                   <button id="btn-add-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add New Customer</button>
                   <button id="btn-add-cAddr" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Open Customer Entry Form">Add Customer Address</button>
                   <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Delete Customer</button>
-                  <button id="btn-del-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Add Order</button>
+                  <button id="btn-ord-cust" type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="First Select a Customer Above">Add Order</button>
                 </form>
           </div>
       </div>
@@ -128,6 +128,37 @@
             <button type="button" class="btn btn-primary" id="btn-add-cAddr-form">Add Customer Address</button>
           </form>
     </div>
+</div>
+
+<!-- ADD ORDER LIGHTBOX-->
+<div class="invisible ltbox-bckdrp" id="cust-ltbox-bckdrp-3">        
+  <div id="ltbox-form-wrap-cust-ord">
+      <div id="ltbox-ctrl" class="cust-ord-ctrl">
+          <div id="ltbox-crt-x"><a href="#"><i id="cust-close-3" class="fas fa-times fa-lg"></i></a></div>
+      </div>
+      <div id="cust-ord-table" class="border">
+        <table id="big-table" class="table c-ord-tbl">
+          
+        </table>
+      </div>      
+      <form id="ltbox-form-ord">        
+          <div class="form-row" id="form-ord-row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="order-item" placeholder="enter item name">
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="itemQuantity" placeholder="item quantity">               
+            </div>
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="itemQuantity" placeholder="item price">               
+            </div>                                              
+          </div>
+          <div id="cust-ord-btn-wrap">
+            <button type="button" class="btn btn-primary" id="btn-cust-ord">Add Customer Order</button>
+            <button type="button" class="btn btn-primary" id="btn-add-ord-item">Add Another Item</button>
+          </div>        
+      </form>
+  </div>
 </div>
 
   <!--ALERT-->

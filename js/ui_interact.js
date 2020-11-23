@@ -126,5 +126,82 @@ $(document).ready(function(){
 
     });
 
+    //ADD ITEM TO ORDER LIGHTBOX EVENT
+    $('#btn-add-ord-item').on('click', () =>{        
+        $('#form-ord-row').append(`<div class="form-group col-md-6">
+        <input type="text" class="form-control" id="order-item" placeholder="enter item name">
+      </div>
+      <div class="form-group col-md-3">
+        <input type="text" class="form-control" id="itemQuantity" placeholder="item quantity">               
+      </div>
+      <div class="form-group col-md-3">
+        <input type="text" class="form-control" id="itemQuantity" placeholder="item price">               
+      </div>`);
+        
+    });
 
+    //ADD CUSTOMER ORDER
+    $('#btn-cust-ord').on('click', () =>{      
+        
+        // Object to hold order
+        let orderObject = {
+            cid: parseInt($('.tr-selected th')[0].innerText), // selected customer id
+            itemNames: new Array(),  // holds order items
+            itemQuantities: new Array(), // holds order items
+            total: 0
+        }
+
+        let prices = new Array();
+
+        let keycount = 0  // counts items
+
+        // Pull Data for all items
+        $('#form-ord-row > div').children().each(function(){
+            let itemValue = $(this).val()
+            
+            // check if on name or quantity
+            if(keycount == 0){
+                orderObject.itemNames.push(itemValue) // add item names to proper key 
+            } else if(keycount == 1) {
+                orderObject.itemQuantities.push(itemValue) // add item quantities to proper key
+            } else{
+                prices.push(parseFloat(itemValue)) // increment price
+            }
+
+            // Reset flag after each item
+            if(keycount == 2){
+                keycount = 0
+            } else {
+                keycount = keycount+1;
+            }                                  
+
+        });
+
+        // Calculate total price
+        for(let i = 0;i < orderObject.itemQuantities.length;i++){
+            orderObject.total += (orderObject.itemQuantities[i] * prices[i])
+        }
+
+        // Reset Search Forms
+        $('#ltbox-form-ord').html(`<div class="form-row" id="form-ord-row">
+        <div class="form-group col-md-6">
+          <input type="text" class="form-control" id="order-item" placeholder="enter item name">
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="form-control" id="itemQuantity" placeholder="item quantity">               
+        </div>
+        <div class="form-group col-md-3">
+          <input type="text" class="form-control" id="itemQuantity" placeholder="item price">               
+        </div>                                              
+      </div>
+      <div id="cust-ord-btn-wrap">
+        <button type="button" class="btn btn-primary" id="btn-cust-ord">Add Customer Order</button>
+        <button type="button" class="btn btn-primary" id="btn-add-ord-item">Add Another Item</button>
+      </div>`)
+
+        console.log(orderObject)
+        // make async post call
+        postDataToServer(`${servURL}/insertCustOrder`, orderObject); // post new customer
+
+    });
 });
