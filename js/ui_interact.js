@@ -1,5 +1,6 @@
-import {updateTableData, servURL, updateOrderHistory} from './buildTables.js'
+import {updateTableData, updateOrderHistory} from './buildTables.js'
 import {getDataFromServer, postDataToServer} from './client.js' 
+import {servURL} from './config.js'
 
 $(document).ready(function(){    
 
@@ -7,7 +8,6 @@ $(document).ready(function(){
 
     //SELECT ROW EVENT
     $(document).on('click','#table-bod tr', function(e){
-        console.log('HELLO!')
 
         if($(this).hasClass('tr-selected')){
             $(this).removeClass('tr-selected'); // add selected class

@@ -61,7 +61,7 @@ for(let key in data['results']){
 
 const updateTableData = ()=>{
     // Add card data
-    getDataFromServer(`${servURL}/fullCount`,fullCount)
+    //getDataFromServer(`${servURL}/fullCount`,fullCount)
 
     // CUSTOMER PAGE
     if(customers !== -1){
@@ -98,4 +98,4 @@ const updateOrderHistory = (fname, lname) => {
     setHeader(['Order id', 'Customer', 'Order Status', 'Date Ordered', 'Total Price']); 
 }
 
-export {updateTableData, servURL, updateOrderHistory};
+export {updateTableData, updateOrderHistory};
