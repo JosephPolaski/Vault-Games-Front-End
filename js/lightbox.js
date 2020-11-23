@@ -26,47 +26,7 @@ $(document).ready(function(){
     $('#cust-close-3').on('click', () =>{        
         $('#cust-ltbox-bckdrp-3').removeClass('visible');
         $('#cust-ltbox-bckdrp-3').addClass('invisible');
-    });
-
-    //ADD ITEM TO ORDER LIGHTBOX EVENT
-    $('#btn-add-ord-item').on('click', () =>{        
-        $('#form-ord-row').append(`<div class="form-group col-md-9">
-        <input type="text" class="form-control" id="order-item" placeholder="enter item name">
-      </div>
-      <div class="form-group col-md-3">
-        <input type="text" class="form-control" id="itemQuantity" placeholder="item quantity">               
-      </div>`);
-        
-    });
-
-    //ADD CUSTOMER ORDER
-    $('#btn-cust-ord').on('click', () =>{      
-        
-        // Object to hold order
-        let orderObject = {
-            itemNames: [],
-            itemQuantities: []
-        }
-
-        let keycount = 0
-
-        // Pull Data for all items
-        $('#form-ord-row > div').children().each(function(){
-            let itemValue = $(this).val()
-            
-            // check if on name or quantity
-            if(keycount % 2 == 0){
-                orderObject.itemNames.push(itemValue) // add item names to proper key 
-            } else {
-                orderObject.itemQuantities.push(itemValue) // add item quantities to proper key
-            }
-            keycount = keycount+1;           
-
-        });
-
-        console.log(orderObject)
-
-    });
+    });  
 
 
     //ADD CUSTOMER ADDRESS LIGHTBOX EVENT
