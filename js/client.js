@@ -33,8 +33,28 @@ const postDataToServer = (queryURL, postData) =>{
             alert('ERROR: Duplicate value or potential conflict reaching server.')
         }
     });
+}
 
+//DELETE REQUEST FUNCTION
+const delDataFromServer = (queryURL, delData) =>{
+
+    //DELETE Data From Server
+    $.ajax({
+        type: 'DELETE',
+        url: queryURL,
+        headers:{
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        data: delData,
+        datatype: 'jsonp',
+        success: function(data){
+            console.log(data)
+        },
+        error: function() {
+            alert("Something went wrong and you were not able to delete. Boo Freakin' Hoo")
+        }
+    });
 }
 
 
-export {getDataFromServer, postDataToServer};
+export {getDataFromServer, postDataToServer, delDataFromServer};
