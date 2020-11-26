@@ -1,5 +1,5 @@
 import {updateTableData, updateOrderHistory} from './buildTables.js'
-import {getDataFromServer, postDataToServer} from './client.js' 
+import {getDataFromServer, postDataToServer, delDataFromServer} from './client.js' 
 import {servURL} from './config.js'
 
 $(document).ready(function(){    
@@ -25,6 +25,17 @@ $(document).ready(function(){
         }     
     });      
 
+    // Destroying and rebuilding table
+    // wrapped in timeout so it can catch all changes made
+    function rebuildTable() { 
+        setTimeout(function(){
+        // delete table
+        $('#big-table').remove();
+        // rebuild table
+        updateTableData()
+        }, 1000);
+    }
+
     /***************************************
      ********CREATE FUNCTIONS***************
      **************************************/
@@ -42,11 +53,8 @@ $(document).ready(function(){
         // make async post call
         postDataToServer(`${servURL}/insertCustomer`, postObject); // post new customer
 
-        // delete table
-        $('#big-table').remove(); // delete out of date table
-
-        // refresh table
-        updateTableData();
+        // rebuilds table
+        rebuildTable();
 
     });
 
@@ -68,11 +76,8 @@ $(document).ready(function(){
         // make async post call
         postDataToServer(`${servURL}/insertProduct`, postObject); // post new customer
 
-        // delete table
-        $('#big-table').remove(); // delete out of date table
-
-        // refresh table
-        updateTableData();
+        // rebuilds table
+        rebuildTable();
 
     });
 
@@ -118,13 +123,34 @@ $(document).ready(function(){
         // make async post call
         postDataToServer(`${servURL}/insertCustAddress`, postObject); // post new customer
 
-        // delete table
-        //$('#big-table').remove(); // delete out of date table
-
-        // refresh table
-        //updateTableData();
-
     });
+
+    //DELETE ADDRESS
+    $('#btn-del-addr').on('click', function(f) {
+
+        // build delete request object
+        let delObject = {};
+
+        delObject.aid = parseInt($('.tr-selected th')[0].innerText);
+        
+        delDataFromServer(`${servURL}/deleteAddress`, delObject);
+
+        rebuildTable();
+    })
+
+    //DELETE CUSTOMER
+    $('#btn-del-cust').on('click', function(f) {
+
+        // build delete request object
+        let delObject = {};
+
+        delObject.cid = parseInt($('.tr-selected th')[0].innerText);
+        
+        delDataFromServer(`${servURL}/deleteCustomer`, delObject);
+
+        rebuildTable();
+    })
+
 
     //ADD ITEM TO ORDER LIGHTBOX EVENT
     $('#btn-add-ord-item').on('click', () =>{        
