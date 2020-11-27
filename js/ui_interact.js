@@ -1,4 +1,4 @@
-import {updateTableData, updateOrderHistory, customerSearch, addressSearch} from './buildTables.js'
+import {updateTableData, updateOrderHistory, customerSearch, addressSearch, productSearch} from './buildTables.js'
 import {getDataFromServer, postDataToServer, delDataFromServer} from './client.js' 
 import {servURL} from './config.js'
 
@@ -104,6 +104,28 @@ $(document).ready(function(){
         }
     });
 
+    //SEARCH PRODUCTS
+    $('#btn-search-prod').on('click',function(e) {
+        let productName = $('#productSearch').val();
+
+        let urlProductName = productName.replaceAll(' ', '%20')
+
+        let prodObject = {};
+
+        prodObject.title = urlProductName;
+
+        console.log(prodObject.title)
+
+        // delete table
+        $('#big-table').remove(); // delete out of date table
+
+        if(productName == ""){
+            updateTableData() // Render All orders
+        } else {
+            productSearch(prodObject.title); // Render Customer Order History
+        }
+    });
+
     //CUSTOMER SEARCH BY LAST NAME ON CUSTOMERS
     $('#btn-search-cust').on('click',function(e){
 
@@ -178,7 +200,7 @@ $(document).ready(function(){
         delDataFromServer(`${servURL}/deleteAddress`, delObject);
 
         rebuildTable();
-    })
+    });
 
     //DELETE CUSTOMER
     $('#btn-del-cust').on('click', function(f) {
@@ -191,7 +213,7 @@ $(document).ready(function(){
         delDataFromServer(`${servURL}/deleteCustomer`, delObject);
 
         rebuildTable();
-    })
+    });
 
 
     //ADD ITEM TO ORDER LIGHTBOX EVENT
