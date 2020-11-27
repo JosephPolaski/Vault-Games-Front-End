@@ -111,7 +111,7 @@ $(document).ready(function(){
         let urlProductName = productName.replaceAll(' ', '%20')
 
         let prodObject = {};
-
+        
         prodObject.title = urlProductName;
 
         console.log(prodObject.title)
