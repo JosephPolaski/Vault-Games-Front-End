@@ -1,4 +1,4 @@
-import {updateTableData, updateOrderHistory, customerSearch} from './buildTables.js'
+import {updateTableData, updateOrderHistory, customerSearch, addressSearch} from './buildTables.js'
 import {getDataFromServer, postDataToServer, delDataFromServer} from './client.js' 
 import {servURL} from './config.js'
 
@@ -104,8 +104,8 @@ $(document).ready(function(){
         }
     });
 
-       //CUSTOMER SEARCH BY LAST NAME
-       $('#btn-search-cust').on('click',function(e){
+    //CUSTOMER SEARCH BY LAST NAME ON CUSTOMERS
+    $('#btn-search-cust').on('click',function(e){
 
         // This can be a partial last name as server handles this as a LIKE '%customerLastName%'
         let customerLastName = $('#inputCustomer').val();
@@ -123,6 +123,28 @@ $(document).ready(function(){
             updateTableData() // Render All orders
         } else {
             customerSearch(postObject.lname); // Render the customer searchecd
+        }
+    });
+
+    //CUSTOMER SEARCH BY LAST NAME ON CUSTOMER_ADDRESSES
+    $('#btn-search-addr').on('click',function(e){
+
+        // This can be a partial last name as server handles this as a LIKE '%customerLastName%'
+        let customerLastName = $('#searchCustomerByAddress').val();
+
+        // build post request object
+        let postObject = {};
+
+        // set key value pairs
+        postObject.lname = customerLastName;
+        
+        // delete table
+        $('#big-table').remove(); // Delete out of date table
+
+        if(customerLastName == ""){
+            updateTableData() // Render All orders
+        } else {
+            addressSearch(postObject.lname); // Render the customer searchecd
         }
     });
 
