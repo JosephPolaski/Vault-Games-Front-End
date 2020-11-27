@@ -145,4 +145,11 @@ const updateOrderHistory = (fname, lname) => {
     setHeader(['Order id', 'Customer', 'Order Status', 'Date Ordered', 'Total Price']); 
 }
 
-export {updateTableData, updateOrderHistory, buildAddCustOrd};
+const customerSearch = (lname) => {
+    //GET Order Data From Server
+    console.log("Sending URL: " + `${servURL}/orderHistory?lname=`+ lname);
+    getDataFromServer(`${servURL}/customerSearch?lname=`+ lname,buildTable); // make async call
+    setHeader(['Customer id', 'First', 'Last', 'Email']); 
+}
+
+export {updateTableData, updateOrderHistory, customerSearch, buildAddCustOrd};
