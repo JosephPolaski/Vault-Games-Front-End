@@ -159,7 +159,6 @@ const addressSearch = (lname) => {
     setHeader(['Address id', 'First', 'Last', 'Street Address', 'City', 'State', 'Zip']); 
 }
 
-//!!!!!!! WORKING ON THIS NOW
 const productSearch = (productTitle) => {
     console.log("Sending URL: " + `${servURL}/productSearch?title=` + productTitle);
     getDataFromServer(`${servURL}/productSearch?title=` + productTitle, buildTable);
