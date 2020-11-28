@@ -1,4 +1,4 @@
-import {updateTableData, updateOrderHistory} from './buildTables.js'
+import {updateTableData, updateOrderHistory, customerSearch, addressSearch, productSearch} from './buildTables.js'
 import {getDataFromServer, postDataToServer, delDataFromServer} from './client.js' 
 import {servURL} from './config.js'
 
@@ -102,8 +102,72 @@ $(document).ready(function(){
         } else {
             updateOrderHistory(postObject.fname, postObject.lname); // Render Customer Order History
         }
-        
+    });
 
+    //SEARCH PRODUCTS
+    $('#btn-search-prod').on('click',function(e) {
+        let productName = $('#productSearch').val();
+
+        let urlProductName = productName.replaceAll(' ', '%20')
+
+        let prodObject = {};
+        
+        prodObject.title = urlProductName;
+
+        console.log(prodObject.title)
+
+        // delete table
+        $('#big-table').remove(); // delete out of date table
+
+        if(productName == ""){
+            updateTableData() // Render All orders
+        } else {
+            productSearch(prodObject.title); // Render Customer Order History
+        }
+    });
+
+    //CUSTOMER SEARCH BY LAST NAME ON CUSTOMERS
+    $('#btn-search-cust').on('click',function(e){
+
+        // This can be a partial last name as server handles this as a LIKE '%customerLastName%'
+        let customerLastName = $('#inputCustomer').val();
+
+        // build post request object
+        let postObject = {};
+
+        // set key value pairs
+        postObject.lname = customerLastName;
+        
+        // delete table
+        $('#big-table').remove(); // delete out of date table
+
+        if(customerLastName == ""){
+            updateTableData() // Render All orders
+        } else {
+            customerSearch(postObject.lname); // Render the customer searchecd
+        }
+    });
+
+    //CUSTOMER SEARCH BY LAST NAME ON CUSTOMER_ADDRESSES
+    $('#btn-search-addr').on('click',function(e){
+
+        // This can be a partial last name as server handles this as a LIKE '%customerLastName%'
+        let customerLastName = $('#searchCustomerByAddress').val();
+
+        // build post request object
+        let postObject = {};
+
+        // set key value pairs
+        postObject.lname = customerLastName;
+        
+        // delete table
+        $('#big-table').remove(); // Delete out of date table
+
+        if(customerLastName == ""){
+            updateTableData() // Render All orders
+        } else {
+            addressSearch(postObject.lname); // Render the customer searchecd
+        }
     });
 
     //ADD CUSTOMER ADDRESS EVENT HANDLER
@@ -136,7 +200,7 @@ $(document).ready(function(){
         delDataFromServer(`${servURL}/deleteAddress`, delObject);
 
         rebuildTable();
-    })
+    });
 
     //DELETE CUSTOMER
     $('#btn-del-cust').on('click', function(f) {
@@ -149,7 +213,7 @@ $(document).ready(function(){
         delDataFromServer(`${servURL}/deleteCustomer`, delObject);
 
         rebuildTable();
-    })
+    });
 
 
     //ADD ITEM TO ORDER LIGHTBOX EVENT
