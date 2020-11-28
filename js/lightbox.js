@@ -35,6 +35,12 @@ $(document).ready(function(){
         $('#cust-ltbox-bckdrp-2').addClass('visible');
     });
 
+    //UPDATE CUSTOMER ADDRESS LIGHTBOX EVENT
+    $('#btn-upd-addr').on('click', () =>{        
+        $('#cust-ltbox-bckdrp-2').removeClass('invisible');
+        $('#cust-ltbox-bckdrp-2').addClass('visible');
+    });
+
     //ADD CUSTOMER LIGHTBOX CLOSE BUTTON
     $('#cust-close-2').on('click', () =>{        
         $('#cust-ltbox-bckdrp-2').removeClass('visible');

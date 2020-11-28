@@ -1,5 +1,5 @@
 import {updateTableData, updateOrderHistory, customerSearch, addressSearch, productSearch} from './buildTables.js'
-import {getDataFromServer, postDataToServer, delDataFromServer} from './client.js' 
+import {getDataFromServer, postDataToServer, delDataFromServer, updateDataFromServer} from './client.js' 
 import {servURL} from './config.js'
 
 $(document).ready(function(){    
@@ -188,6 +188,27 @@ $(document).ready(function(){
         postDataToServer(`${servURL}/insertCustAddress`, postObject); // post new customer
 
     });
+
+    $('#btn-edit-cAddr-form').on('click',function(e){
+
+        // build post request object
+        let putObject = {};
+
+        // set key value pairs
+        putObject.aid = parseInt($('.tr-selected th')[0].innerText);
+        putObject.line_1 = $('#customer-addr1').val();
+        putObject.line_2 = $('#customer-addr2').val();
+        putObject.city = $('#customer-city').val();
+        putObject.state = $('#customer-state').val();
+        putObject.zip = $('#customer-zip').val();
+
+        // make async post call
+        updateDataFromServer(`${servURL}/updateAddress`, putObject); // edit existing customer
+        console.log(putObject)
+        rebuildTable();
+
+    });
+
 
     //DELETE ADDRESS
     $('#btn-del-addr').on('click', function(f) {
