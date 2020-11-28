@@ -51,10 +51,29 @@ const delDataFromServer = (queryURL, delData) =>{
             console.log(data)
         },
         error: function() {
-            alert("Something went wrong and you were not able to delete. Boo Freakin' Hoo")
+            alert("Something went wrong and you were not able to delete.")
+        }
+    });
+}
+
+const updateDataFromServer = (queryURL, updateData) => {
+    //UPDATE Data From Server
+    $.ajax({
+        type: 'PUT',
+        url: queryURL,
+        headers:{
+            'Content-Type' : 'application/x-www-form-urlencoded'
+        },
+        data: updateData,
+        datatype: 'jsonp',
+        success: function(data) {
+            console.log(data)
+        },
+        error: function() {
+            alert("Something went wrong and you were not able to update.")
         }
     });
 }
 
 
-export {getDataFromServer, postDataToServer, delDataFromServer};
+export {getDataFromServer, postDataToServer, delDataFromServer, updateDataFromServer};
