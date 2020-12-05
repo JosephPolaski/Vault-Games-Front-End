@@ -2,7 +2,7 @@
 import {updateTableData} from './buildTables.js';
 import {getDataFromServer} from './client.js';
 import {fullCount} from './aggregateCount.js';
-const servURL = 'http://flip2.engr.oregonstate.edu:8226';
+const servURL = 'http://flip1.engr.oregonstate.edu:8596';
 
 $(document).ready(function(){
     
