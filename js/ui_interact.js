@@ -189,6 +189,7 @@ $(document).ready(function(){
 
     });
 
+    // update customer address
     $('#btn-edit-cAddr-form').on('click',function(e){
 
         // build post request object
@@ -314,5 +315,18 @@ $(document).ready(function(){
         // make async post call
         postDataToServer(`${servURL}/insertCustOrder`, orderObject); // post new customer
  
+    });
+
+    // Return Order
+    $('#btn-return-order').on('click', ()=>{
+
+        // build post request object
+        let putObject = {};
+
+        putObject.oid = parseInt($('.tr-selected th')[0].innerText), // selected order id
+
+         // make async post call
+         updateDataFromServer(`${servURL}/returnOrder`, putObject); // edit existing customer
+         rebuildTable();
     });
 });
